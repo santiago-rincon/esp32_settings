@@ -11,8 +11,11 @@ El driver esta disponible en la carpeta `drivers` o en la [página oficial](http
 Pines de la ESP32:
 - **SDA**: GPIO D21
 - **SCL**: GPIO D22
+
 Sensor SHT31
+
 ![Conexión del sensor SHT31](assets/sht31.png)
 
 Sensor SHT40
+
 ![Conexión del sensor SHT31](assets/sht40.png)
