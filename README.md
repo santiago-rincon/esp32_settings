@@ -13,7 +13,9 @@
 	- [Librería Sensor driver (necesaria para el funcionamiento de la librería SHT40)](https://github.com/adafruit/Adafruit_Sensor)
 	- [Librería BusIO (necesaria para el funcionamiento de la librería SHT40)](https://github.com/adafruit/Adafruit_BusIO)
 	Una vez descargadas todas las librerías instalarlas de la siguiente manera (se debe realizar el proceso con cada una):
+
 	![A](assets/librerias.png)
+
 	![A](assets/librerias2.png)
 # Instalación del driver de la ESP32 (CP210X) en caso de requerirlo
 El driver esta disponible en la carpeta `driver` o en la [página oficial](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads). El driver se debe instalar en caso de que ele quipo no reconozca la ESP32 una vez realizado el paso 1. Puede seguir el siguiente [tutorial](https://www.intel.la/content/www/xl/es/support/articles/000033005/intel-nuc.html) para la instalación.
@@ -52,20 +54,23 @@ En esta línea se crea la data que será enviada a través del protocolo HTTP, p
 }
 ```
 A continuación se presentan algunas variantes:
-- Envío de `temperatura` 
+- Envío de `temperatura`
+
 	```c
 	  String data = "{\"temp\":" + String(temp) + ",\"mac\":\"" + mac + "\"}";
 	```
 - Envío de `temperatura`  y `humedad ambiente`
+  
 	```c
 	  String data = "{\"temp\":" + String(temp) + ",\"ha\":" + String(ha) + ",\"mac\":\"" + mac + "\"}";
 	```
 - Envío de `temperatura` ,  `humedad ambiente` y  `humedad del suelo`
+  
 	```c
 	  String data = "{\"temp\":" + String(temp) + ",\"ha\":" + String(ha) + ",\"hs\":" + String(hs) + ",\"mac\":\"" + mac + "\"}";
 	```
 # Indicadores led
-Las resistencias conectada al cátodo de cada led es únicamente de protección, esta puede rondar entre los 220$\Omega$ y los 440$\Omega$. 
+Las resistencias conectada al cátodo de cada led es únicamente de protección, esta puede rondar entre los 220 $\Omega$ y los 440 $\Omega$. 
 - **Led verde:** este led estará encendido mientras la ESP32 realiza el procedimiento de lectura de los diferentes  sensores.
 - **Led amarillo:** este led estará encendido mientras la ESP32 realiza el procedimiento de conexión al punto de acceso WiFi de la estación base.
 - **Led rojo:** este led estará encendido mientras la ESP32 realiza el procedimiento de envío de datos a través del protocolo HTTP a la estación base.
